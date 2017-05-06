@@ -1,0 +1,27 @@
+
+$tile-width:  100px !default;
+$tile-margin: 1px !default;
+
+.tile-grid {
+
+	width: ( 8 * $tile-width ) + ( 16 * $tile-margin );
+
+	.tile {
+		width: $tile-width;
+		height: $tile-width;
+		margin: $tile-margin;
+		padding: 4 * $tile-margin;
+		background-color: $gray-light;
+		// background-image: url( 'http://placehold.it/100/' );
+		float: left;
+		cursor: pointer;
+
+		&:hover {
+			background-color: darken( $gray-light, 5% );
+		}
+
+		.title {
+			font-size: 4rem;
+		}
+	}
+}
