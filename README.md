@@ -1,4 +1,4 @@
-heroku-node
+mapp3d
 ===========
 
-Code for the tutorial by @sevilayha: Deploying Node Apps to Heroku
+code for the mapp3d website currently at http://mapp3d.heroku.com
