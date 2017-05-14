@@ -19,5 +19,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, function() {
-	console.log('Our app is running on http://localhost:' + port);
+	console.log('Mapp3d is running locally on http://localhost:' + port);
 });
