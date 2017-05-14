@@ -1,27 +1,103 @@
 
-$tile-width:  100px !default;
-$tile-margin: 1px !default;
-
 .tile-grid {
 
-	width: ( 8 * $tile-width ) + ( 16 * $tile-margin );
+	display: -webkit-inline-flex; /* Safari */
+  	display: inline-flex;
+  	-webkit-flex-direction: row; /* Safari */
+  	flex-direction:         row;
+  	-webkit-flex-wrap: wrap; /* Safari */
+  	flex-wrap:         wrap;
+  	-webkit-justify-content: center; /* Safari */
+  	justify-content:         center;
+
+
+	margin: 0 auto;
+	border: 1px dashed orange;
+
+	width: 100%;
+	min-width: 320px;
 
 	.tile {
-		width: $tile-width;
-		height: $tile-width;
-		margin: $tile-margin;
-		padding: 4 * $tile-margin;
+		width: 100%;
+		margin: 0;
+		padding: 10px;
+		display: inline-block;
+
 		background-color: $gray-light;
-		// background-image: url( 'http://placehold.it/100/' );
-		float: left;
 		cursor: pointer;
+
+		border: 1px solid white;
+
+		&::after {
+			content: "";
+			display: block;
+			padding-bottom: 100%;
+		}
 
 		&:hover {
 			background-color: darken( $gray-light, 5% );
 		}
 
 		.title {
+			position: absolute;
 			font-size: 4rem;
+			color: red;
+		}
+
+	}
+
+}
+
+
+@media only screen and ( min-width: $screen-xs-min ) {
+
+	.tile-grid .tile {
+
+		width: 50%;
+
+		.title {
+			color: orange;
 		}
 	}
+}
+
+@media only screen and ( min-width: $screen-sm-min ) {
+
+	.tile-grid .tile {
+
+		width: 33%;
+
+		.title {
+			color: yellow;
+		}
+
+	}
+
+}
+
+@media only screen and ( min-width: $screen-md-min ) {
+
+	.tile-grid .tile {
+
+		width: 25%;
+
+		.title {
+			color: green;
+		}
+
+	}
+
+}
+
+@media only screen and ( min-width: $screen-lg-min ) {
+
+	.tile-grid .tile {
+
+		width: 12.5%;
+
+		.title {
+			color: blue;
+		}
+	}
+
 }
