@@ -11,8 +11,9 @@ var bs_sync_reload_delay = 500;
 var src = {
 	scss   : ['public/sass/*.scss', 'public/sass/**/*.scss'], 
 	css    : 'css/main.css',
-	ejs    : 'views/*.ejs',
-	script : 'server.js'
+	markup : ['views/*.ejs', 'views/*.pug'],
+	script : 'server.js',
+	js     : 'js/*.js'
 };
 
 // browserSync task
@@ -64,5 +65,6 @@ gulp.task('nodemon', function (cb) {
 
 gulp.task( 'default', ['sass','browser-sync'], function(){
 	gulp.watch( src.scss, ['sass'] );
-	gulp.watch( src.ejs ).on( 'change', reload );	
+	gulp.watch( src.markup ).on( 'change', reload );
+	gulp.watch( src.js ).on( 'change', reload );
 });
